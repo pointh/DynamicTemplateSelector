@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:App1.ViewModels"
+             x:Class="App1.MainPage">
+    
+    <ContentPage.BindingContext>
+        <views:MainPageViewModel/>
+    </ContentPage.BindingContext>
+    
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+       
+        <ListView ItemsSource="{Binding VsechnyTiskoviny}" RowHeight="20" Margin="20, 20" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <!-- Do template je implicitně předaná položka z ListView jako binding context -->
+                <!-- Jaký template se zvolí určí program podle typu dat ve třídě TiskovinaTemplateSelector.OnSelectTemplate(...) -->
+                <views:TiskovinaTemplateSelector/>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

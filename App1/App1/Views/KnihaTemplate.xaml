@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataTemplate xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.KnihaTemplate">
+    <ViewCell>
+        <StackLayout BackgroundColor="Beige" Margin="2, 2">
+            <Label Text="{Binding Nazev}" />
+            <Label Text="{Binding Autor}" />
+            <Label Text="{Binding Vydavatel}" />
+        </StackLayout>
+    </ViewCell>  
+</DataTemplate>
